@@ -1,0 +1,21 @@
+<form (ngSubmit)="filtrar()" [formGroup]="formBuscar">
+    
+    <select formControlName="categoria" (change)="filtrar()">
+        <option value="" selected>Selecciona una categoría</option>
+        <option *ngFor="let item of listaCategorias" [value]="item">{{item}}</option>
+    </select>
+
+    <div class="autocomplete" style="width:300px;">
+        <input type="text" id="nombre" formControlName="nombre"  autocomplete="off" (input)="sugerencia()">
+    </div>
+
+    <button type="submit" >Buscar</button>
+</form>
+
+
+
+<ul>
+    <li *ngFor="let vendehumo of listaVendehumos">
+        <app-card-vendehumo [vendehumo]="vendehumo"></app-card-vendehumo>
+    </li>
+</ul>

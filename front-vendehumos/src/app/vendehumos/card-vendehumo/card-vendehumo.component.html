@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-img">
+        <img src="{{vendehumo.urlImagen}}" alt="{{vendehumo.nombre}}" srcset="">
+    </div>
+    <div class="card-body">
+        <div class="card-title">
+            {{vendehumo.nombre |titlecase}}
+        </div>
+        <div class="card-description">
+            {{vendehumo.descripcion}}
+        </div>
+        <div class="card-categories">
+            <ul>
+                <li *ngFor="let categoria of vendehumo.categorias">
+                    {{categoria}}
+                </li>
+            </ul>    
+        </div>
+    </div>
+   <div class="card-votes">
+       {{vendehumo.numVotos}}
+   </div>
+</div>
